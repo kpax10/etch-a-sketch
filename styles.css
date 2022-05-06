@@ -1,10 +1,35 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    height: 100vh;
+}
+
+h1 {
+    margin: 0 auto;
+}
+
+.container {
+    background: coral;
+    width: 800px;
+    display: grid;
+    /* grid-auto-rows: min-content; */
+    /* grid-auto-flow: ; */
+
+    /* grid-template-columns: auto auto auto auto; */
+
 }
 
 .square {
-    height: 10px;
-    width: 10px;
-    background: black;
+    /* height: 10px;
+    width: 10px; */
+    /* padding: 20px; */
+    background: white;
+    border: 1px black solid;
 }
