@@ -2,19 +2,11 @@
 
 const container = document.querySelector('.container');
 
-// let square = document.createElement('div');
-// square.classList.add('square');
-// container.append(square);
+let containerSize = 16; // or prompt * 4?
 
-// square = document.createElement('div');
-// square.classList.add('square');
-// container.append(square);
-
-let containerSize = 256; // or .value
-
-for (let i = 0; i < containerSize; i++) {
+for (let i = 0; i < containerSize ** 2; i++) {
     let square = document.createElement('div');
     square.classList.add('square');
+    square.style.width = `${600 / containerSize}px`;
     container.append(square);
-}
-
+};
