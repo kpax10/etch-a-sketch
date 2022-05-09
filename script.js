@@ -3,42 +3,42 @@
 const container = document.querySelector('.container');
 let boxLength = 16;
 const getSize = document.querySelector('.prompt');
-// const square = document.createElement('div');
-
 
 const generateBox = function () {
     for (let i = 0; i < boxLength ** 2; i++) {
-        const createSquare = document.createElement('div');
+        let createSquare = document.createElement('div');
         createSquare.classList.add('square');
         createSquare.style.width = `${600 / boxLength}px`;
-        container.append(createSquare);
+        container.appendChild(createSquare);
     };
 };
 
 const removeBox = function () {
     while (container.firstChild) {
         container.removeChild(container.firstChild);
+
+        // DOES THE ELEMENT NEED TO BE WIPED OF ITS PROPERTIES COMPLETELY?
+
     };
 };
 
 generateBox();
 
 const squares = document.querySelectorAll('.square');
-// forEach square, add event listener hover to change color to black
+
 squares.forEach((square) => {
     square.addEventListener('mouseover', () => {
         square.classList.add('black');
     });
 });
 
+
 getSize.addEventListener('click', () => {
     boxLength = prompt('How many squares per side?');
     boxLength = Number(boxLength);
 
-    squares.forEach((square) => {
-        square.classList.remove('black');
-    });
     removeBox();
     generateBox();
+
 });
 
