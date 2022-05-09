@@ -18,7 +18,7 @@ const removeBox = function () {
         container.removeChild(container.firstChild);
 
         // DOES THE ELEMENT NEED TO BE WIPED OF ITS PROPERTIES COMPLETELY?
-
+        // REMOVE EVENT LISTENER??
     };
 };
 
