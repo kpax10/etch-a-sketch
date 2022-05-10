@@ -3,6 +3,7 @@
 const container = document.querySelector('.container');
 const getSize = document.querySelector('.prompt');
 let boxLength = 16;
+let color = 'black'
 
 const displayBox = function () {
     for (let i = 0; i < boxLength ** 2; i++) {
@@ -14,7 +15,7 @@ const displayBox = function () {
     let squares = document.querySelectorAll('.square');
     squares.forEach((square) => {
         square.addEventListener('mouseover', () => {
-            square.classList.add('black');
+            square.style.backgroundColor = color; // getColorCode();  This makes a rainbow
         });
     });
 };
@@ -35,3 +36,12 @@ getSize.addEventListener('click', () => {
     removeBox();
     displayBox();
 });
+
+const getColorCode = () => {
+    const makeColorCode = '0123456789ABCDEF';
+    let code = '#';
+    for (var count = 0; count < 6; count++) {
+        code = code + makeColorCode[Math.floor(Math.random() * 16)];
+    };
+    return code;
+};
