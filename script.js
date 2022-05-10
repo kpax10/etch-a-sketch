@@ -1,8 +1,9 @@
 'use strict';
 
 const container = document.querySelector('.container');
-let boxLength = 16;
 const getSize = document.querySelector('.prompt');
+let boxLength = 16;
+
 
 const displayBox = function () {
     for (let i = 0; i < boxLength ** 2; i++) {
@@ -28,9 +29,10 @@ const removeBox = function () {
 displayBox();
 
 getSize.addEventListener('click', () => {
-    boxLength = prompt('How many squares per side?');
-    boxLength = Number(boxLength);
+    boxLength = Number(prompt('How many squares per side?'));
+    if (!((boxLength >= 1) && (boxLength <= 100))) {
+        boxLength = Number(prompt('Needs to be a number between 1 - 100'));
+    };
     removeBox();
     displayBox();
 });
-
