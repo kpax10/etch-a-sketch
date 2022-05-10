@@ -18,6 +18,15 @@ h1 {
     font-size: 70px;
 }
 
+button {
+    background-color: inherit;
+    padding: 0.8rem 2.5rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    font-size: 18px;
+    margin-bottom: 2rem;
+}
+
 .container {
     background: coral;
     width: 600px;
