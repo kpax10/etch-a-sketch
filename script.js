@@ -4,7 +4,6 @@ const container = document.querySelector('.container');
 const getSize = document.querySelector('.prompt');
 let boxLength = 16;
 
-
 const displayBox = function () {
     for (let i = 0; i < boxLength ** 2; i++) {
         let createSquare = document.createElement('div');
