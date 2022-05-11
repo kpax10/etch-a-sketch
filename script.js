@@ -2,7 +2,8 @@
 
 const container = document.querySelector('.container');
 const getSize = document.querySelector('.prompt');
-const randomColor = document.querySelector('.random-color')
+const randomColor = document.querySelector('.random-color');
+const gradient = document.querySelector('.gradient');
 let boxLength = 16;
 let color = 'black'
 
@@ -52,6 +53,20 @@ randomColor.addEventListener('click', () => {
 	squares.forEach((square) => {
 		square.addEventListener('mouseover', () => {
 			square.style.backgroundColor = getColorCode();  //getColorCode();  //This makes a rainbow
+		});
+	});
+});
+
+// add 10% opacity with each passover
+// find out how to increment a variable and add it into the style
+gradient.addEventListener('click', () => {
+	let squares = document.querySelectorAll('.square');
+
+	squares.forEach((square) => {
+		square.addEventListener('mouseover', () => {
+			// square.style.opacity = 0;
+			square.style.opacity += Number(square.style.opacity + 0.1);
+
 		});
 	});
 });
