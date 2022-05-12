@@ -4,6 +4,7 @@ const container = document.querySelector('.container');
 const getSize = document.querySelector('.prompt');
 const randomColor = document.querySelector('.random-color');
 const gradient = document.querySelector('.gradient');
+const clear = document.querySelector('.clear');
 let boxLength = 16;
 let color = 'black'
 
@@ -52,6 +53,7 @@ randomColor.addEventListener('click', () => {
 	let squares = document.querySelectorAll('.square');
 	squares.forEach((square) => {
 		square.addEventListener('mouseover', () => {
+			square.style.opacity = 1;
 			square.style.backgroundColor = getColorCode();  //getColorCode();  //This makes a rainbow
 		});
 	});
@@ -68,4 +70,9 @@ gradient.addEventListener('click', () => {
 			square.style.opacity = counter;
 		});
 	});
+});
+
+clear.addEventListener('click', () => {
+	removeBox();
+	displayBox();
 });
