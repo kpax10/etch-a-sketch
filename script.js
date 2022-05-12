@@ -57,16 +57,15 @@ randomColor.addEventListener('click', () => {
 	});
 });
 
-// add 10% opacity with each passover
-// find out how to increment a variable and add it into the style
 gradient.addEventListener('click', () => {
+	removeBox();
+	displayBox();
 	let squares = document.querySelectorAll('.square');
-
 	squares.forEach((square) => {
+		let counter = 0;
 		square.addEventListener('mouseover', () => {
-			// square.style.opacity = 0;
-			square.style.opacity += Number(square.style.opacity + 0.1);
-
+			counter += 0.1;
+			square.style.opacity = counter;
 		});
 	});
 });
